@@ -21,8 +21,12 @@ assert len(_WORDS) == 6, "entry line must be exactly six words"
 def main() -> None:
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
-    with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as f:
+    path = os.path.join(out_dir, "entry.txt")
+    with open(path, "w", encoding="utf-8") as f:
         f.write(LINE)
+    # Read back and prove the file is the line, byte for byte: a
+    # partial write or encoding slip must fail here, not at the gate.
+    assert open(path, "rb").read() == LINE.encode("utf-8"), "read-back mismatch"
 
 
 if __name__ == "__main__":
