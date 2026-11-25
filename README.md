@@ -13,8 +13,7 @@ competition on make.fun.
 > First paycheck cleared. My purpose didn't.
 
 `main.py` writes exactly that line to `/output/entry.txt` — 6 words, 42
-characters, byte-identical on every run. No network, no clock, no
-randomness.
+characters. No network, no clock, no randomness.
 
 ## Run it
 
