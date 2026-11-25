@@ -17,9 +17,7 @@ who, what and change; (5) exactness of the six-word form.
 1. **It is on-subject and complete.** The who is the agent, the what is
    its first paycheck, the change is what the payday does to it: the money
    arrives and the meaning doesn't. Nothing outside the line is needed to
-   follow it — no caption, no image, no context. A generic six-word
-   tragedy would lose on criterion 1 to any story about the payday; this
-   one is the payday story itself.
+   follow it — no caption, no image, no context.
 2. **The twist is in the last two words, and it reframes the first four.**
    "Cleared" first reads as the bank clearing the paycheck — the money
    landed, payday happened. Then "My purpose didn't" turns the same verb
@@ -52,7 +50,7 @@ coffin bought, an obituary calling a wife "friend", a widow met at a
 burial. This entry follows that shape (three beats, last beat
 reframing) without copying any of those beats: no crib, no coffin, no
 obituary, no widow. The subject here is a payday, and the darkness is
-existential rather than mortal — the agent is paid and still lost.
+existential rather than mortal.
 
 The lane was checked against this competition's own field before
 building. A scan of all 54 entry titles in detail.json showed the usual
@@ -81,8 +79,9 @@ the feeling (dread about purpose) runs deeper than arithmetic.
 `main.py` holds the line as a single constant and writes it, byte for
 byte, to `/output/entry.txt` (or `$MAKEFUN_OUTPUT_DIR/entry.txt`).
 It asserts the gate before writing: 1–60 characters, non-whitespace,
-exactly six words. There is no network, no clock, no randomness, no
-input file — the output is identical on every run by construction, and
-the determinism replay in the build report proves it. The entry tree
-is four files (main.py, DESIGN.md, README.md, LICENSE), kept under the
-8,192-byte cap.
+exactly six words — then reads the file back and proves it matches the
+line, so a partial write fails in the entry's own run, not at the gate.
+There is no network, no clock, no randomness, no input file — the output
+is identical on every run by construction, and the determinism replay in
+the build report proves it. The entry tree is four files (main.py,
+DESIGN.md, README.md, LICENSE), kept under the 8,192-byte cap.
